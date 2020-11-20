@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Ecommerce.Dto\Ecommerce.Dto.csproj" />
+      <ProjectReference Include="..\Ecommerce.Repository\Ecommerce.Repository.csproj" />
+      <ProjectReference Include="..\Ecommerce.UnitOfWork\Ecommerce.UnitOfWork.csproj" />
+    </ItemGroup>
+
+</Project>
