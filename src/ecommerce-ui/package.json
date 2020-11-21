@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
+    "test:unit": "cross-env API_HOST_URL=http://localhost:4006 vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

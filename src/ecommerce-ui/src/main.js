@@ -6,7 +6,7 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 Vue.config.productionTip = false;
-    axios.defaults.baseURL = process.env.API_HOST_URL || "https://localhost:5001";
+axios.defaults.baseURL = process.env.API_HOST_URL || "https://localhost:5001";
 
 Vue.prototype.$http = axios;
 
