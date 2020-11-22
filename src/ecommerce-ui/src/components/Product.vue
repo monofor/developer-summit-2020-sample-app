@@ -4,8 +4,20 @@
       <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-text">Code: {{ product.code }}</p>
-        <input type="text" class="form-control mb-1" placeholder="Quantity" v-model="quantity"/>
-        <button type="button" class="btn btn-block btn-primary" @click="order(product)">Order</button>
+        <input
+          type="text"
+          class="form-control mb-1"
+          :id="'quantity' + index"
+          placeholder="Quantity"
+          v-model="quantity"
+        />
+        <button
+          type="button"
+          class="btn btn-block btn-primary"
+          @click="order(product)"
+        >
+          Order
+        </button>
       </div>
     </div>
   </div>
@@ -18,24 +30,26 @@ export default {
   name: "Product",
   props: {
     product: {
-      type: Object
+      type: Object,
     },
     index: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   data() {
     return {
-      quantity: 0
-    }
+      quantity: 0,
+    };
   },
   methods: {
     async order(product) {
       const productId = product.productId;
-      const data = [{
-        productId: productId,
-        quantity: parseInt(this.quantity)
-      }];
+      const data = [
+        {
+          productId: productId,
+          quantity: parseInt(this.quantity),
+        },
+      ];
 
       try {
         const result = await Service.post(data);
@@ -47,11 +61,9 @@ export default {
         alert(e);
         console.error(e);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
